@@ -31,3 +31,7 @@ alias minikube-docker-rollback='eval $(minikube docker-env -u)'
 alias docker-rmi-none='docker rmi $(docker images | grep "^<none>" | awk '"'"'{print $3}'"'"')'
 #remove all stopped containers
 alias docker-rm-stopped='docker rm $(docker ps -a -q)'
+
+# Kubernetes
+# https://github.com/ahmetb/kubectl-aliases
+[ -f ~/.kubectl_aliases ] && source ~/.kubectl_aliases
