@@ -19,3 +19,15 @@ alias gtagdelete='tagdelete'
 
 # ansible
 alias aplay='ansible-playbook main.yml -i '
+
+# minikube
+alias minikube-start='minikube start --vm-driver xhyve --insecure-registry localhost:5000'
+alias minikube-docker='eval $(minikube docker-env)'
+alias minikube-docker-rollback='eval $(minikube docker-env -u)'
+
+# docker
+
+# remove untagged images
+alias docker-rmi-none='docker rmi $(docker images | grep "^<none>" | awk '"'"'{print $3}'"'"')'
+#remove all stopped containers
+alias docker-rm-stopped='docker rm $(docker ps -a -q)'
